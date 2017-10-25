@@ -16,7 +16,7 @@ module Pod
       # keep_demo = configurator.ask_with_answers("Would you like to include a demo application with your library", ["Yes", "No"]).to_sym
       keep_demo = :yes
       # framework = configurator.ask_with_answers("Which testing frameworks will you use", ["Specta", "Kiwi", "None"]).to_sym
-      framework = :specta
+      framework = :none
       case framework
         when :specta
           configurator.add_pod_to_podfile "Specta"
@@ -37,7 +37,7 @@ module Pod
       end
 
       # snapshots = configurator.ask_with_answers("Would you like to do view based testing", ["Yes", "No"]).to_sym
-      snapshots = :yes
+      snapshots = :no
       case snapshots
         when :yes
           configurator.add_pod_to_podfile "FBSnapshotTestCase"
@@ -58,7 +58,7 @@ module Pod
 
       loop do
         # prefix = configurator.ask("What is your class prefix")
-        prefix = "LY"
+        prefix = "XY"
         if prefix.include?(' ')
           puts 'Your class prefix cannot contain spaces.'.red
         else
